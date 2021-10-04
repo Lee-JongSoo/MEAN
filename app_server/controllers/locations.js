@@ -30,7 +30,7 @@ const homelist = (req, res) => {
                 address: '경기 안성 중앙로367',
                 rating: 2,
                 facilities: ['Food', 'Premium wifi'],
-                  distance: '250m'
+                distance: '250m'
                 }
             ]
         }
@@ -75,10 +75,10 @@ const locationInfo = (req, res) => {
           ],
           reviews: [
             {
-              author: 'Simon Holmes',
+              author: 'Lee JongSu',
               rating: 5,
               timestamp: '16 July 2013',
-              reviewText: 'What a great place. I can\'t say enough good things about it.'
+              reviewText: 'Good! Good! Good! 2017250035 Lee JongSu.'
             },
             {
               author: 'Charlie Chaplin',
@@ -92,17 +92,71 @@ const locationInfo = (req, res) => {
     );
   };
   
-  const addReview = (req, res) => {
-    res.render('location-review-form',
-      {
-        title: 'Review Starcups on Loc8r' ,
-        pageHeader: { title: 'Review Starcups' }
-      }
-    );
-  };
+const addReview = (req, res) => {
+  res.render('location-review-form', {
+      title: 'Review Starcups on Loc8r' ,
+      pageHeader: { title: 'Review Starcups' }
+    }
+  );
+};
 
 module.exports = {
     homelist,
     locationInfo,
     addReview
 };
+
+const mongoose = require('mongoose');
+
+const reviewSchema = new mongoose.Schema( {
+  author: String,
+  rating: {
+    type: Number,
+    required: true,
+    min: 0,
+    max: 5
+  },
+  reviewText: String,
+  createdOn: {
+    type: Date,
+    default: Date.now
+  }
+})
+
+const openingTimeSchema = new mongoose.Schema( {
+  days: {
+    type: String,
+    required: true
+  },
+  opening: String,
+  closing: String,
+  closed: {
+    type: Boolean,
+    required: true
+  }
+});
+
+const locationSchema = new mongoose.Schema ( {
+  name: {
+    type: String,
+    required: true
+  },
+  address: String,
+  rating: {
+    type: Number,
+    'default': 0,
+    min: 0,
+    max: 5
+  },
+  facilities: [String],
+  coords: {
+    type: {type: String},
+    coordinates: [Number]
+  },
+  openingTimes: [openingTimeSchema],
+  reviews: [reviewSchema]
+});
+
+locationSchema.index({coords: '2dsphere'});
+
+mongoose.model('Location', locationSchema);
