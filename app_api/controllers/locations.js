@@ -52,7 +52,7 @@ const locationListByDistance = async (req, res) => {
                 address: result.address,
                 rating: result.rating,
                 facilities: result.facilities,
-                distance: `${result.distance.calculated.toFixed()}m`
+                distance: `${result.distance.calculated.toFixed()}`
             }
         });
         res.status(200).json(locations);
