@@ -91,61 +91,59 @@ const renderHomepage = (req, res, responseBody) => {
   });
 };
 
+const renderDetailPage = function (req, res, location) {
+  res.render("location-info", {
+    title: location.name,
+    pageHeader: { title: location.name },
+    sidebar: {
+      context:
+        "is on Loc8r because it has accessible wifi and\
+      space to sit down with your laptop and get some work done.",
+      callToAction:
+        "If you've been and you like it - or if you\
+      don't - please leave a review to help other people just like you.",
+    },
+    location
+  });
+};
 
 /* GET 'Location info' page */
 const locationInfo = (req, res) => {
-    res.render('location-info',
-      {
-        title: 'Starcups',
-         pageHeader: {
-          title: 'Loc8r',
-        },
-        sidebar: {
-          context: 'is on Loc8r because it has accessible wifi and space to sit down with your laptop and get some work done.',
-          callToAction: 'If you\'ve been and you like it - or if you don\'t - please leave a review to help other people just like you.'
-        },
-        location: {
-          name: 'Starcups',
-          address: '125 High Street, Reading, RG6 1PS',
-          rating: 3,
-          facilities: ['Hot drinks', 'Food', 'Premium wifi'],
-          coords: {lat: 37.010867323966195, lng: 127.26937443625563},
-          openingTimes: [
-            {
-              days: 'Monday - Friday',
-              opening: '7:00am',
-              closing: '7:00pm',
-              closed: false
-            },
-            {
-              days: 'Saturday',
-              opening: '8:00am',
-              closing: '5:00pm',
-              closed: false
-            },
-            {
-              days: 'Sunday',
-              closed: true
-            }
-          ],
-          reviews: [
-            {
-              author: 'Lee JongSu',
-              rating: 5,
-              timestamp: '16 July 2013',
-              reviewText: 'Good! Good! Good! 2017250035 Lee JongSu.'
-            },
-            {
-              author: 'Charlie Chaplin',
-              rating: 3,
-              timestamp: '16 June 2013',
-              reviewText: 'It was okay. Coffee wasn\'t great, but the wifi was fast.'
-            }
-          ]
-        }
-      }
-    );
+  const path = `/api/locations/${req.params.locationid}`;
+  const requestOptions = {
+    url: `${apiOptions.server}${path}`,
+    method: 'GET',
+    json: {}
   };
+  request(requestOptions, (err, {statusCode}, body) => {
+    const data = body;
+    if (statusCode === 200) {
+      data.coords = {
+        lng: body.coords[0],
+        lat: body.coords[1]
+      };
+      renderDetailPage(req, res, data);
+    }else {
+      showError(req, res, statusCode);
+    }
+  });
+};
+const showError = (req, res, status) => {
+  let title = "";
+  let content = "";
+  if (status === 404) {
+    title = "404, page not found";
+    content = "Oh dear, Looks like you can't find this page. Sorry";
+  } else {
+    title = `${status}, something's gone wrong`;
+    content = "Something, somewhere, has gone just a little bit wrong";
+  }
+  res.status(status);
+  res.render("generic-text", {
+    title,
+    content,
+  });
+};
   
 const addReview = (req, res) => {
   res.render('location-review-form', {
