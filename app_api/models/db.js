@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const dbURI = `mongodb+srv://my_atlas_user:ltyxodus7!@cluster0.0g2uj.mongodb.net`;
+const dbURI = `mongodb+srv://my_atlas_user:ltyxodus7@cluster0.0g2uj.mongodb.net`;
 mongoose.connect(dbURI, {useNewUrlParser: true}); 
 
 mongoose.connection.on('connected', () => {
