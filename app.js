@@ -39,4 +39,14 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.use("/api", (req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+  res.header(
+    "Access-Control-Allow-headers",
+    "Origin, X-Requested-with, \
+  Content-Type, Accept, Authorization"
+  );
+  next();
+});
+
 module.exports = app;
