@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
 import { FrameworkComponent } from './framework/framework.component';
 import { AboutComponent } from './about/about.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { PageHeaderComponent } from './page-header/page-header.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { HomepageComponent } from './homepage/homepage.component';
     DistancePipe,
     FrameworkComponent,
     AboutComponent,
-    HomepageComponent
+    HomepageComponent,
+    PageHeaderComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
