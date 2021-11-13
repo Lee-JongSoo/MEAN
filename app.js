@@ -19,7 +19,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'app_public')));
 
+app.use("/api", (req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+  res.header("Access-Control-Allow-headers","Origin, X-Requested-with, Content-Type, Accept");
+  next();
+});
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
 
@@ -37,16 +44,6 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});
-
-app.use("/api", (req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:4200");
-  res.header(
-    "Access-Control-Allow-headers",
-    "Origin, X-Requested-with, \
-  Content-Type, Accept, Authorization"
-  );
-  next();
 });
 
 module.exports = app;
