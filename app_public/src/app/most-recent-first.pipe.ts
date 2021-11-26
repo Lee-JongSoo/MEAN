@@ -5,9 +5,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class MostRecentFirstPipe implements PipeTransform {
 
-  private compare(a, b) {
-    const createdOnA = a.createdOn;
-    const createdOnB = b.createdOn;
+  private compare(a: { createOn: any; }, b: { createOn: any; }) {
+    const createdOnA = a.createOn;
+    const createdOnB = b.createOn;
 
     let comparison = 1;
     if (createdOnA > createdOnB) {
