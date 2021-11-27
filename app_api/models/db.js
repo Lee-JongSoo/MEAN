@@ -49,3 +49,4 @@ require('./locations');
 require('./locations')
 
 require('./users')
+//2017250035_이종수
