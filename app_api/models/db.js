@@ -44,3 +44,8 @@ process.on('SIGTERM', () => {
 });
 
 require('./locations');
+
+//Begin in yours schemas & models
+require('./locations')
+
+require('./users')

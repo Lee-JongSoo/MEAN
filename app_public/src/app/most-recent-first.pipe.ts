@@ -21,7 +21,7 @@ export class MostRecentFirstPipe implements PipeTransform {
       return reviews.sort(this.compare);
     }
 
-    return null as any;
+    return null;
   }
 
 }
