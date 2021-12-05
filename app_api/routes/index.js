@@ -22,7 +22,7 @@ router
     .delete(ctrlLocations.locationsDeleteOne);
 
 
-//review
+//review//2017250035 이종수
 router
     .route('/locations/:locationid/reviews')
     .post(auth, ctrlReviews.reviewsCreate);

@@ -41,6 +41,7 @@ app.get("*", function (req, res, next) {
   res.sendFile(path.join(__dirname, "app_public", "build", "index.html"));
 });
 
+//2017250035 이종수
 // error handler
 app.use((err, req, res, next) => {
   if (err.name === "UnauthorizedError") {

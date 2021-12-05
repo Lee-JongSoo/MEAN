@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Loc = mongoose.model('Location');
 
+//2017250035 이종수
 const User = mongoose.model("User");
 const getAuthor = (req, res, callback) => {
   if (req.payload && req.payload.email) {
@@ -44,6 +45,7 @@ const doSetAverageRating = (location) => {
       });
 };
 
+//2017250035 이종수
 const doAddReview = (req, res, location, author) => {
   if (!location) {
     res.status(404).json({ message: "Location not found" });
@@ -66,6 +68,7 @@ const doAddReview = (req, res, location, author) => {
   }
 };
 
+//2017250035 이종수
 const reviewsCreate = (req, res) => {
   getAuthor(req, res, (req, res, userName) => {
     const locationId = req.params.locationid;
