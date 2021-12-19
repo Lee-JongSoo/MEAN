@@ -5,7 +5,7 @@
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
-  "start_url": "./",
+  "start_url": "https://findlocation97.herokuapp.com",
   "icons": [
     {
       "src": "src/assets/icons/manifest-icon-192.maskable.png",
