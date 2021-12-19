@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1639889129159,
+  "timestamp": 1639889372273,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -100,7 +100,7 @@
     "/assets/webfonts/fa-solid-900.ttf": "eb8914f6b1797b45ee0883e6089d92695d9f9441",
     "/assets/webfonts/fa-solid-900.woff": "a22acd7697f36e7d4cc31a853c70e776eac54bb1",
     "/assets/webfonts/fa-solid-900.woff2": "0ccb2c814a7e4ca12c4778821633809cb0361eaa",
-    "/index.html": "2589da4a060bb7c7201e03cc8b0678095b9c54ee",
+    "/index.html": "7a0982ec20315f37c8729a453464f219af3120f6",
     "/main.9528617101d55733.js": "698e2e491e1a8877111c38570e9dfb7460fc706f",
     "/manifest.webmanifest": "ee36e6d28c70b3baafffd52764b87998f5715591",
     "/polyfills.6179f369284b945b.js": "145fe6ecec05840cbc3c7f3b5fdb95808166cc54",
