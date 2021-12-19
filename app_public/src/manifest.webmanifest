@@ -1,14 +1,14 @@
 {
-  "name": "Findlocation",
-  "short_name": "Findlocation",
+  "name": "PlcaeLocator",
+  "short_name": "PlcaeLocator",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
-  "start_url": "https://findlocation97.herokuapp.com",
+  "start_url": "https://findlocation97.herokuapp.com/",
   "icons": [
     {
-      "src": "assets/icons/manifest-icon-192.png",
+      "src": "src/assets/icons/manifest-icon-192.maskable.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"

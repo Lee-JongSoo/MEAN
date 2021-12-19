@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1639887433603,
+  "timestamp": 1639887974838,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -11,7 +11,6 @@
         "ignoreVary": true
       },
       "urls": [
-        "/favicon.ico",
         "/index.html",
         "/main.9528617101d55733.js",
         "/manifest.webmanifest",
@@ -40,6 +39,7 @@
         "/assets/icons/icon-96x96.png",
         "/assets/icons/icon.png",
         "/assets/icons/manifest-icon-192.maskable.png",
+        "/assets/icons/manifest-icon-192.png",
         "/assets/icons/manifest-icon-512.maskable.png",
         "/assets/javascripts/bootstrap.min.js",
         "/assets/javascripts/validation.js",
@@ -78,6 +78,7 @@
     "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/assets/icons/icon.png": "76919209bb42ace62ba8c67f9c6511dd8ed5913a",
     "/assets/icons/manifest-icon-192.maskable.png": "a603b23004557ddcad08e885b041da6b71ea9f65",
+    "/assets/icons/manifest-icon-192.png": "a603b23004557ddcad08e885b041da6b71ea9f65",
     "/assets/icons/manifest-icon-512.maskable.png": "02648dbeb7f3209ffbb288922930c51ae54c732e",
     "/assets/javascripts/bootstrap.min.js": "0c4e8445f6f0c9611dc1c13dc6f085eb4bcaca0b",
     "/assets/javascripts/validation.js": "cee73fc7de7d67f25b1f7ffe81f9b4a8fc436cf0",
@@ -99,10 +100,9 @@
     "/assets/webfonts/fa-solid-900.ttf": "eb8914f6b1797b45ee0883e6089d92695d9f9441",
     "/assets/webfonts/fa-solid-900.woff": "a22acd7697f36e7d4cc31a853c70e776eac54bb1",
     "/assets/webfonts/fa-solid-900.woff2": "0ccb2c814a7e4ca12c4778821633809cb0361eaa",
-    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "/index.html": "34df44ec701fb643b3aee08ea2321d51b7a3bed4",
     "/main.9528617101d55733.js": "698e2e491e1a8877111c38570e9dfb7460fc706f",
-    "/manifest.webmanifest": "c9a16400b8792ab5c53bdda3d67ce9440878b070",
+    "/manifest.webmanifest": "ee36e6d28c70b3baafffd52764b87998f5715591",
     "/polyfills.6179f369284b945b.js": "145fe6ecec05840cbc3c7f3b5fdb95808166cc54",
     "/runtime.b35605b75f464692.js": "d3330655b6cde2df1318171cddd3a19e7eaa5027",
     "/styles.ef46db3751d8e999.css": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
